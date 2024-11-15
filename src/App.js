@@ -5,6 +5,7 @@ import Header from './components/Header';
 import appStore from './utils/store/appStore';
 
 function App() {
+
   return (
     <div className="App">
       <Provider store={appStore}>

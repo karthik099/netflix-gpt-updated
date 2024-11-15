@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import Header from "./Header";
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -64,7 +64,6 @@ const Login = () => {
 
   return (
     <div>
-      <Header />
       <div>
         <form
           onSubmit={(e) => {
@@ -108,11 +107,11 @@ const Login = () => {
             Submit
           </button>
           <p className="text-red-700">{errMessage? errMessage : ''}</p>
-          <p className="py-3 cursor-pointer" onClick={toggleSignIn}>
+          <Link className="my-5 cursor-pointer hover:text-red-700" onClick={toggleSignIn}>
             {isSignIn
               ? "New to Nexflix? Sign Up now"
               : "Already has an account? Please Sign in"}
-          </p>
+          </Link>
         </form>
       </div>
     </div>
